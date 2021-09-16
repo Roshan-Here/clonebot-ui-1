@@ -56,7 +56,6 @@ class Presets(object):
 𝐃𝐞𝐥𝐚𝐲𝐞𝐝 : {} | 𝐂𝐚𝐩𝐭𝐢𝐨𝐧 : {} | 𝐅𝐍 𝐂𝐚𝐩𝐭𝐢𝐨𝐧: {}
 𝐓𝐲𝐩𝐞𝐬: 📚:{} | 🎞:{} | 🔊:{} | 📸:{} | 🗣:{}
     """
-    FILE_TYPES = ["document", "video", "audio", "voice", "photo"]
     COPIED_MESSAGES = "<b><a href='https://github.com/m4mallu/clonebot'>Medias Copied</a></b>"
     IN_CORRECT_PERMISSIONS_MESSAGE_DEST_POSTING = "A̶c̶c̶e̶s̶s̶ ̶D̶e̶n̶i̶e̶d̶\n\n𝘜𝘴𝘦𝘳 𝘪𝘴 𝘯𝘰𝘵 𝘢𝘯 𝘢𝘥𝘮𝘪𝘯 𝘰𝘳 𝘥𝘰𝘦𝘴𝘯'𝘵 𝘩𝘢𝘷𝘦\n" \
                                                   "𝘱𝘰𝘴𝘵𝘪𝘯𝘨 𝘱𝘳𝘪𝘷𝘪𝘭𝘢𝘨𝘦𝘴 𝘪𝘯 𝘵𝘩𝘦 𝘨𝘪𝘷𝘦𝘯 𝘤𝘩𝘢𝘵"

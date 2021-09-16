@@ -1,4 +1,5 @@
 #----------------------------------- https://github.com/m4mallu/clonebot-ui -----------------------------------------#
+from config import Config
 import os
 import csv
 import shutil
@@ -7,7 +8,12 @@ import itertools
 from presets import Presets
 from pyrogram.errors import FloodWait
 from library.sql import file_types, msg_id_limit, to_msg_id_cnf_db, master_index
-
+if bool(os.environ.get("ENV", False)):
+    from sample_config import Config
+    from sample_config import LOGGER
+else:
+    from config import Config
+    from config import LOGGER
 
 # Function to find last message id of supported types
 async def find_msg_id(client, id, chat_id):
@@ -22,7 +28,7 @@ async def find_msg_id(client, id, chat_id):
                     await msg_id_limit(id, id_last_msg)
                     await to_msg_id_cnf_db(id, id_last_msg)
                     file_types.clear()
-                    file_types.extend(Presets.FILE_TYPES)
+                    file_types.extend(Config.FILE_TYPES)
                     return
     except FloodWait as e:
         await asyncio.sleep(e.x)
