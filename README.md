@@ -29,7 +29,7 @@
 
 # Deploy on Heroku
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/m4mallu/clonebot-ui)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/its-leo-bitch/clonebot-ui-1)
 
 <br>
 <p align="center">
