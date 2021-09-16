@@ -38,7 +38,7 @@
     </a>
 </p>
 
-<p align="center">
+<p> align="center">
     <a href="https://t.me/space4renjith">
         <img src="https://img.shields.io/badge/Contact-Developer-blueviolet?style=for-the-badge&logo=telegram">
     </a>
