@@ -41,9 +41,9 @@
 <br>
         
 <p align="center">
-     <a href="https://telegra.ph/Clonebot-UI-Help-05-30">
+    <a href="https://telegra.ph/Clonebot-UI-Help-05-30">
          <img src="https://img.shields.io/badge/Read-Documentation-blueviolet?style=for-the-badge&logo=telegraph">
-     </a>
+    </a>
     <a href="https://github.com/m4mallu/clonebot">
         <img src="https://img.shields.io/badge/Clonebot-Main%20Page-blueviolet?style=for-the-badge&logo=github">
     </a>
