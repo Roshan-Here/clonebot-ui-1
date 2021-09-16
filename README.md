@@ -29,7 +29,7 @@
 
 <br>
 
-<p> align="center">
+<p align="center">
     <a href="https://telegra.ph/Clonebot-UI-Help-05-30">
         <img src="https://img.shields.io/badge/Read-Documentation-blueviolet?style=for-the-badge&logo=telegraph">
     </a>
@@ -38,7 +38,7 @@
     </a>
 </p>
 
-<p> align="center">
+<p align="center">
     <a href="https://t.me/XeQulsT">
         <img alt="GPL3" src ="https://telegra.ph/file/e76d40ed899c2abd87209.jpg" width="300"/>
         <a>
