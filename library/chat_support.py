@@ -1,5 +1,4 @@
 #----------------------------------- https://github.com/m4mallu/clonebot-ui -----------------------------------------#
-from config import Config
 import os
 import csv
 import shutil
