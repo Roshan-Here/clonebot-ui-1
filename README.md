@@ -47,10 +47,15 @@
     </a>
 </p>
 
-<p align="center">
+<p align="right">
     <a href="https://t.me/space4renjith">
-        <img alt="GPL3" src ="https://telegra.ph/file/c4f778ccfc576a954dd20.gif" width="340" height="214"/>
+        <img alt="GPL3" src ="https://telegra.ph/file/c4f778ccfc576a954dd20.gif" width="340" height=/>
     </a>
 </p>
 
+<p> align="left">
+    <a href="https://t.me/XeQulsT">
+        <img alt="GPL3" src ="https://telegra.ph/file/e76d40ed899c2abd87209.jpg" width="300"/>
+        <a>
+<p>
 
