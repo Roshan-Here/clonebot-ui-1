@@ -67,5 +67,5 @@ class Config(object):
     FILE_TYPES = set(x for x in os.environ.get("FILE_TYPES", "document video audio voice photo").split())
 
 def LOGGER(name: str) -> logging.Logger:
-
+    
     return logging.getLogger(name)
