@@ -11,8 +11,6 @@
         "TG_BOT_TOKEN": {"description": "Get Bot Token From BotFather Bot","required": true},
         "TG_USER_SESSION": {"description": "String Session from an admin user. Go to: t.ly/GxsB ","required": true},
         "AUTH_USERS": {"description": "User ids of authorized users separated by space", "required": false},
-        "DELAY_SECS": {"description": "Delay between sending files. Recommended: 10", "required": false},
-        "FILE_TYPES": {"description": "File types separated by space. Default: document video audio voice photo", "required": false},
         "ENV": {"description": "Set this to ANYTHING","value": "ANYTHING"}
   },
   "addons": [

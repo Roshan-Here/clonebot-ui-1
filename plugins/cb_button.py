@@ -132,7 +132,7 @@ async def close(client: Bot, cb: CallbackQuery):
 async def reset_settings(client: Bot, cb: CallbackQuery):
     file_types.clear()
     id = int(cb.from_user.id)
-    file_types.extend(Config.FILE_TYPES)
+    file_types.extend(Presets.FILE_TYPES)
     await reset_all(int(cb.from_user.id))
     await cb.answer(Presets.RST_MSG, True)
     await del_user_cfg(id)

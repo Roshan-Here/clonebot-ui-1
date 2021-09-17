@@ -14,13 +14,6 @@ from library.chat_support import calc_percentage, calc_progress, save_target_cfg
 #
 bot_start_time = time.time()
 #
-if bool(os.environ.get("ENV", False)):
-    from sample_config import Config
-    from sample_config import LOGGER
-else:
-    from config import Config
-    from config import LOGGER
-#
 async def clone_medias(client: Bot, message: Message):
     id = int(message.chat.id)
     query = await query_msg(id)
@@ -46,7 +39,7 @@ async def clone_medias(client: Bot, message: Message):
     fn_caption = bool(query.file_caption)
     #
     if bool(clone_delay):
-        delay = Config.DELAY_SECS
+        delay = 10
     else:
         delay = 0.25
     #
@@ -83,7 +76,7 @@ async def clone_medias(client: Bot, message: Message):
                 await msg2.edit(Presets.CANCELLED_MSG, reply_markup=reply_markup_finished)
                 await reset_all(id)
                 file_types.clear()
-                file_types.extend(Config.FILE_TYPES)
+                file_types.extend(Presets.FILE_TYPES)
                 return
             for file_type in file_types:
                 media = getattr(messages, file_type, None)
@@ -177,7 +170,7 @@ async def clone_medias(client: Bot, message: Message):
                             await msg.edit_text(Presets.COPY_ERROR, reply_markup=reply_markup_finished)
                             await reset_all(id)
                             file_types.clear()
-                            file_types.extend(Config.FILE_TYPES)
+                            file_types.extend(Presets.FILE_TYPES)
                             if not int(total_copied):
                                 await message.delete()
                             return
@@ -190,7 +183,7 @@ async def clone_medias(client: Bot, message: Message):
                         if end_id and (int(messages.message_id) >= end_id):
                             await reset_all(id)
                             file_types.clear()
-                            file_types.extend(Config.FILE_TYPES)
+                            file_types.extend(Presets.FILE_TYPES)
                             if not int(total_copied):
                                 await message.delete()
                             await msg.edit(Presets.FINISHED_TEXT, reply_markup=reply_markup_finished)
@@ -200,7 +193,7 @@ async def clone_medias(client: Bot, message: Message):
     #
     file_types.clear()
     await reset_all(id)
-    file_types.extend(Config.FILE_TYPES)
+    file_types.extend(Presets.FILE_TYPES)
     await save_target_cfg(id, target_chat)
     if not int(total_copied):
         await message.delete()
