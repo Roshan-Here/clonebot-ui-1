@@ -58,6 +58,14 @@ class Config(object):
 
     DB_URI = os.environ.get("DATABASE_URL", "")
 
+    # Delay between sending files
+
+    DELAY_SECS = int(os.environ.get("DELAY_SECS", 10))
+
+    # Copying file types default
+
+    FILE_TYPES = set(x for x in os.environ.get("FILE_TYPES", "document video audio voice photo").split())
+
 def LOGGER(name: str) -> logging.Logger:
 
     return logging.getLogger(name)
