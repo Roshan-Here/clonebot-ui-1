@@ -27,7 +27,7 @@ async def start(client: Bot, message: Message):
 
 # --------------------------------- Delay changing function ------------------------------ #
 @Bot.on_message(filters.private & filters.command([Config.CHANGE_DELAY_COMMAND]))
-async def start(client: Bot, message: Message):
+async def chdelay(client: Bot, message: Message):
     setdelay = None
     if " " in message.text:
         setdelay = message.text.split(" ")
