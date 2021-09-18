@@ -45,11 +45,7 @@ async def clone_medias(client: Bot, message: Message):
     default_caption = bool(query.caption)
     fn_caption = bool(query.file_caption)
     #
-    if bool(clone_delay):
-        delay = Config.DELAY_SECS
-    else:
-        delay = 0.25
-    #
+    
     if start_id > end_id:
         start_id = start_id ^ end_id
         end_id = end_id ^ start_id
@@ -186,6 +182,12 @@ async def clone_medias(client: Bot, message: Message):
                                            reply_markup=reply_markup_stop)
                         except Exception:
                             pass
+                        # dynamic delay +
+                        if bool(clone_delay):
+                            delay = Config.DELAY_SECS
+                        else:
+                            delay = 0.25
+                        # dynamic delay -
                         await asyncio.sleep(delay)
                         if end_id and (int(messages.message_id) >= end_id):
                             await reset_all(id)

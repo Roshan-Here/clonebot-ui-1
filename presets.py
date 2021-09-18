@@ -1,8 +1,18 @@
 # ----------------------------------- https://github.com/m4mallu/clonebot --------------------------------------------#
+import os
+if os.environ.get("ENV", False):
+    from sample_config import Config
+    from sample_config import LOGGER
+else:
+    from config import Config
+    from config import LOGGER
+
 class Presets(object):
     START_TEXT = """
 𝙃𝙚𝙡𝙡𝙤... {}
-𝐼 𝑐𝑎𝑛 𝑐𝑙𝑜𝑛𝑒 𝑚𝑒𝑑𝑖𝑎 𝑓𝑟𝑜𝑚 𝑎𝑛𝑦 𝑐ℎ𝑎𝑡 𝑡𝑜 𝑦𝑜𝑢𝑟 𝑝𝑒𝑟𝑠𝑜𝑛𝑎𝑙 𝑐ℎ𝑎𝑡 ! 𝐶𝑙𝑖𝑐𝑘 𝑠𝑒𝑡𝑡𝑖𝑛𝑔𝑠 𝑡𝑜 𝑐𝑜𝑛𝑓𝑖𝑔𝑢𝑟𝑒 𝑚𝑒. 𝐼𝑓 𝑦𝑜𝑢 𝑙𝑖𝑘𝑒 𝑚𝑒, 𝑝𝑙𝑒𝑎𝑠𝑒 𝑔𝑖𝑣𝑒 𝑎 𝑠𝑡𝑎𝑟 𝑖𝑛 𝑚𝑎 𝐺𝑖𝑡𝐻𝑢𝑏 𝑟𝑒𝑝𝑜. 𝑇ℎ𝑎𝑛𝑘𝑠
+𝐼 𝑐𝑎𝑛 𝑐𝑙𝑜𝑛𝑒 𝑚𝑒𝑑𝑖𝑎 𝑓𝑟𝑜𝑚 𝑎𝑛𝑦 𝑐ℎ𝑎𝑡 𝑡𝑜 𝑦𝑜𝑢𝑟 𝑝𝑒𝑟𝑠𝑜𝑛𝑎𝑙 𝑐ℎ𝑎𝑡 ! 𝐶𝑙𝑖𝑐𝑘 𝑠𝑒𝑡𝑡𝑖𝑛𝑔𝑠 𝑡𝑜 𝑐𝑜𝑛𝑓𝑖𝑔𝑢𝑟𝑒 𝑚𝑒.
+You can set clone delay with /{} command. Click it for more information.
+𝐼𝑓 𝑦𝑜𝑢 𝑙𝑖𝑘𝑒 𝑚𝑒, 𝑝𝑙𝑒𝑎𝑠𝑒 𝑔𝑖𝑣𝑒 𝑎 𝑠𝑡𝑎𝑟 𝑖𝑛 𝑚𝑎 𝐺𝑖𝑡𝐻𝑢𝑏 𝑟𝑒𝑝𝑜. 𝑇ℎ𝑎𝑛𝑘𝑠
     """
     WELCOME_TEXT = "⭑⭑★✪ HELP for more info: ✪★⭑⭑"
     MESSAGE_COUNT = """
@@ -139,7 +149,7 @@ H̶e̶r̶o̶k̶u̶ f̶r̶e̶e̶ d̶y̶n̶o̶s̶ r̶e̶s̶t̶a̶r̶t̶s̶ .
     FN_AS_CAPT_OFF = "𝙁𝙞𝙡𝙚 𝙣𝙖𝙢𝙚 𝙖𝙨 𝙘𝙖𝙥𝙩𝙞𝙤𝙣 : 𝘿𝙚𝙖𝙘𝙩𝙞𝙫𝙖𝙩𝙚𝙙 🚫"
     NOT_REQUIRED = "𝙏𝙝𝙞𝙨 𝙛𝙞𝙚𝙡𝙙 𝙞𝙨 𝙣𝙤𝙩 𝙈𝙖𝙙𝙖𝙩𝙤𝙧𝙮  ⚠"
     RST_MSG = "𝙍𝙚𝙨𝙚𝙩 𝙩𝙤 𝘽𝙤𝙩 𝙙𝙚𝙛𝙖𝙪𝙡𝙩𝙨 .. 𝘾𝙤𝙣𝙛𝙞𝙧𝙢𝙚𝙙 ✅"
-    TEST_MSG = "Test Message"
+    TEST_MSG = f"Test Message. Delay set: <code>{str(Config.DELAY_SECS)}</code>"
     OVER_FLOW = "𝙈𝙖𝙭𝙞𝙢𝙪𝙢 𝙡𝙞𝙢𝙞𝙩 𝙞𝙨 𝙚𝙭𝙘𝙚𝙚𝙙𝙚𝙙 !\n𝘾𝙝𝙚𝙘𝙠 𝙩𝙝𝙚 𝙖𝙡𝙡𝙤𝙬𝙚𝙙 𝙡𝙞𝙢𝙞𝙩, 𝙏𝙧𝙮 𝙖𝙜𝙖𝙞𝙣 !"
     SELECT_TYPE = "👉 𝙎𝙚𝙡𝙚𝙘𝙩𝙞𝙤𝙣 𝙬𝙞𝙡𝙡 𝙗𝙚 𝙩𝙤𝙜𝙜𝙡𝙚𝙙 𝙤𝙣 𝙩𝙖𝙥\n𝘈𝘭𝘭 𝘢𝘳𝘦 𝘴𝘦𝘭𝘦𝘤𝘵𝘦𝘥 𝘣𝘺 𝘥𝘦𝘧𝘢𝘶𝘭𝘵 !"
     INDEXING_MSG = "𝙋𝙡𝙚𝙖𝙨𝙚 𝙬𝙖𝙞𝙩..\n<i>Finding duplicate messages in the\ntarget chat. This will " \
