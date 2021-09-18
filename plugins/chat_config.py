@@ -33,16 +33,22 @@ async def chdelay(client: Bot, message: Message):
         setdelay = message.text.split(" ")
         try:
             Config.DELAY_SECS = int(setdelay[1])
-            await message.reply_text(
+            send = await message.reply_text(
                 quote=True,text=f"Delay set to: <code>{str(Config.DELAY_SECS)}</code> succesfully.")
         except:
-            await message.reply_text(
+            send = await message.reply_text(
                 quote=True,text=f"Delay can not be set. Example: <code>/{Config.CHANGE_DELAY_COMMAND} 4</code>")
+        await asyncio.sleep(20)
+        send.delete()
+        message.delete()
     else:
-        await message.reply_text(quote=True,text=f"Delay is <code>{str(Config.DELAY_SECS)}</code> at now.\n" + \
+        send = await message.reply_text(quote=True,text=f"Delay is <code>{str(Config.DELAY_SECS)}</code> at now.\n" + \
         f"If you want to change to 7, type <code>/{Config.CHANGE_DELAY_COMMAND} 7</code>\n" +\
         f"7 is an example :D You can change delay to what you want.\n\n" + \
         f"If you want to see delay at now, type only <code>/{Config.CHANGE_DELAY_COMMAND}</code>")
+        await asyncio.sleep(20)
+        send.delete()
+        message.delete()
 
 
 # --------------------------------------- Main Window ------------------------------------ #
