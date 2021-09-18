@@ -1,6 +1,5 @@
 import asyncio
 
-from sqlalchemy.sql.expression import text
 from bot import Bot
 from library.sql import *
 from presets import Presets
