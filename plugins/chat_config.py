@@ -44,8 +44,8 @@ async def chdelay(client: Bot, message: Message):
         f"7 is an example :D You can change delay to what you want.\n\n" + \
         f"If you want to see delay at now, type only <code>/{Config.CHANGE_DELAY_COMMAND}</code>")
     await asyncio.sleep(10)
-    send.delete()
-    message.delete()
+    await send.delete()
+    await message.delete()
 
 
 # --------------------------------------- Main Window ------------------------------------ #
