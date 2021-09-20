@@ -1,4 +1,5 @@
 import asyncio
+
 from bot import Bot
 from library.sql import *
 from presets import Presets
@@ -8,14 +9,44 @@ from library.chat_support import find_msg_id, find_dc
 from library.buttons import reply_markup_start, reply_markup_home
 from pyrogram.types import Message
 
+import os
+if os.environ.get("ENV", False):
+    from sample_config import Config
+    from sample_config import LOGGER
+else:
+    from config import Config
+    from config import LOGGER
 
 # ----------------------------- Start Message command function --------------------------- #
-@Bot.on_message(filters.private & filters.command(['start', 'help']))
+@Bot.on_message(filters.private & filters.command(['start', 'help', 'h']))
 async def start(client: Bot, message: Message):
     await message.reply_text(
-        Presets.START_TEXT.format(message.from_user.first_name),
+        Presets.START_TEXT.format(message.from_user.first_name, Config.CHANGE_DELAY_COMMAND),
         reply_markup=reply_markup_start
     )
+
+# --------------------------------- Delay changing function ------------------------------ #
+@Bot.on_message(filters.private & filters.command([Config.CHANGE_DELAY_COMMAND]))
+async def chdelay(client: Bot, message: Message):
+    setdelay = None
+    if " " in message.text:
+        setdelay = message.text.split(" ")
+        try:
+            Config.DELAY_SECS = float(setdelay[1])
+            send = await message.reply_text(
+                quote=True,text=f"Delay set to: <code>{str(Config.DELAY_SECS)}</code> succesfully.")
+        except:
+            send = await message.reply_text(
+                quote=True,text=f"Delay can not be set. Example: <code>/{Config.CHANGE_DELAY_COMMAND} 4</code>")
+    else:
+        send = await message.reply_text(quote=True,text=f"Delay is <code>{str(Config.DELAY_SECS)}</code> at now.\n" + \
+        f"If you want to change it 7 secs, type <code>/{Config.CHANGE_DELAY_COMMAND} 7</code>\n" +\
+        f"7 is an example :D You can change delay to what you want.\n" + \
+        f"If you want to disable delay, set it to <code>0.25</code>\n" + \
+        f"If you want to see delay at now, type only <code>/{Config.CHANGE_DELAY_COMMAND}</code>")
+    await asyncio.sleep(10)
+    await send.delete()
+    await message.delete()
 
 
 # --------------------------------------- Main Window ------------------------------------ #

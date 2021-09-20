@@ -58,6 +58,10 @@ class Config(object):
 
     DB_URI = os.environ.get("DATABASE_URL", "")
 
+    # Dynamical change delay command. example for default: /delay 5 will set delay to 5 seconds.
+
+    CHANGE_DELAY_COMMAND = os.environ.get("CHANGE_DELAY_COMMAND", "delay")
+
     # Delay between sending files
 
     DELAY_SECS = int(os.environ.get("DELAY_SECS", 10))
